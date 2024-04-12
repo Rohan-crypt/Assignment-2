@@ -2,7 +2,7 @@
 artwork_data = []
 
 # Function to add artwork
-def add_artwork():
+def add():
     title = input("Enter artwork title: ")
     artist = input("Enter artist name: ")
     price = float(input("Enter artwork price: "))
@@ -10,7 +10,7 @@ def add_artwork():
     print("Artwork added successfully!")
 
 # Function to view artwork
-def view_artwork():
+def view():
     if artwork_data:
         for artwork in artwork_data:
             print(f"Title: {artwork['title']}, Artist: {artwork['artist']}, Price: ${artwork['price']}")
@@ -18,7 +18,7 @@ def view_artwork():
         print("No artwork available.")
 
 # Function to search artwork
-def search_artwork():
+def search():
     keyword = input("Enter title or artist to search: ")
     found = False
     for artwork in artwork_data:
@@ -29,7 +29,7 @@ def search_artwork():
         print("Artwork not found.")
 
 # Function to update artwork information
-def update_artwork():
+def update():
     title = input("Enter artwork title to update: ")
     for artwork in artwork_data:
         if title.lower() == artwork['title'].lower():
@@ -40,7 +40,7 @@ def update_artwork():
     print("Artwork not found.")
 
 # Function to delete artwork
-def delete_artwork():
+def delete():
     title = input("Enter artwork title to delete: ")
     for artwork in artwork_data[:]:
         if title.lower() == artwork['title'].lower():
@@ -61,15 +61,15 @@ def main():
         print("6. Exit")
         choice = input("Enter your choice: ")
         if choice == '1':
-            add_artwork()
+            add()
         elif choice == '2':
-            view_artwork()
+            view()
         elif choice == '3':
-            search_artwork()
+            search()
         elif choice == '4':
-            update_artwork()
+            update()
         elif choice == '5':
-            delete_artwork()
+            delete()
         elif choice == '6':
             print("Thank you for using the Art Gallery Management System!")
             break
